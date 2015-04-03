@@ -35,4 +35,38 @@ public class Application extends Controller {
 
     }
 
+    public static Result getWeatherByIp(String days){
+
+        SOAPController weather = new SOAPController(days);
+        weather.getLatLongByIp(request().remoteAddress());
+        Day[] result = weather.getAllData();
+
+        String reply = "[";
+
+        for(int i = 0; i < result.length; i++){
+            reply += result[i].getJson();
+        }
+
+        reply += "]";
+
+        return ok(reply);
+    }
+
+    public static Result getWeatherDefault(String days){
+
+        SOAPController weather = new SOAPController(days);
+
+        Day[] result = weather.getAllData();
+
+        String reply = "[";
+
+        for(int i = 0; i < result.length; i++){
+            reply += result[i].getJson();
+        }
+
+        reply += "]";
+
+        return ok(reply);
+    }
+
 }
