@@ -49,6 +49,9 @@ public class Application extends Controller {
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
+            if(i>0){
+                reply += ", ";
+            }
         }
 
         reply += "]";
@@ -66,6 +69,9 @@ public class Application extends Controller {
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
+            if(i>0){
+                reply += ", ";
+            }
         }
 
         reply += "]";
