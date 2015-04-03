@@ -23,6 +23,9 @@ public class Application extends Controller {
 
         for(int i = 0; i < days.length; i++){
             reply += days[i].getJson();
+            if(i>0){
+                reply += ", ";
+            }
         }
 
         reply += "]";
