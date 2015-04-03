@@ -17,14 +17,14 @@ public class Application extends Controller {
     public static Result weather(){
 
         SOAPController weather = new SOAPController();
-        Day[] days = weather.getAllData();
+        Day[] result = weather.getAllData();
 
         String reply = "[";
 
-        for(int i = 0; i < days.length; i++){
-            reply += days[i].getJson();
-            if(i>0){
-                reply += ", ";
+        for(int i = 0; i < result.length; i++){
+            reply += result[i].getJson();
+            if(!(i>result.length-2)){
+                reply += ",";
             }
         }
 
@@ -49,8 +49,8 @@ public class Application extends Controller {
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
-            if(i>0){
-                reply += ", ";
+            if(!(i>result.length-2)){
+                reply += ",";
             }
         }
 
@@ -69,8 +69,8 @@ public class Application extends Controller {
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
-            if(i>0){
-                reply += ", ";
+            if(!(i>result.length-2)){
+                reply += ",";
             }
         }
 
