@@ -10,7 +10,8 @@ import views.html.*;
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("Your new application is ready."));
+
+        return ok(index.render("Weather API Service - https://github.com/adidinchuk/Weather-Web-Service"));
     }
 
     public static Result weather(){
