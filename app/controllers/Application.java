@@ -19,7 +19,7 @@ public class Application extends Controller {
         SOAPController weather = new SOAPController();
         Day[] result = weather.getAllData();
 
-        String reply = "[";
+        String reply = " \"data\":[";
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
@@ -45,7 +45,7 @@ public class Application extends Controller {
         weather.getLatLongByIp(request().remoteAddress());
         Day[] result = weather.getAllData();
 
-        String reply = "[";
+        String reply = " \"data\":[";
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
@@ -65,7 +65,7 @@ public class Application extends Controller {
 
         Day[] result = weather.getAllData();
 
-        String reply = "[";
+        String reply = " \"data\":[";
 
         for(int i = 0; i < result.length; i++){
             reply += result[i].getJson();
